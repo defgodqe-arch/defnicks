@@ -1,19 +1,21 @@
-name: KrystalDisplayName
+name: defnicks
 version: 1.0.0
-main: com.krystal.smp.KrystalDisplayName
+main: com.defgodqe.defnicks.DefNicks
 api-version: '1.21'
-author: Krystal SMP
-description: Custom player display names for Krystal SMP.
+author: defgodqe
+website: https://github.com/defgodqe-arch/defnicks
+description: Displays EssentialsX nicknames in the TAB tablist.
+softdepend:
+  - Essentials
+  - TAB
 
 commands:
-  nick:
-    description: Change your Krystal SMP display name.
-    usage: /nick <name|reset>
-    aliases:
-      - nickname
-    permission: krystal.nick
+  defnicks:
+    description: Configure TAB to display Essentials nicknames.
+    usage: /defnicks
+    permission: defnicks.admin
 
 permissions:
-  krystal.nick:
-    description: Allows a player to change their own nickname.
-    default: true
+  defnicks.admin:
+    description: Allows configuration of defnicks.
+    default: op
