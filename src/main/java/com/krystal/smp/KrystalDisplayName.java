@@ -134,9 +134,9 @@ public final class KrystalDisplayName extends JavaPlugin implements Listener, Co
         TextDisplay display = player.getWorld().spawn(getNametagLocation(player), TextDisplay.class);
         display.setBillboard(Display.Billboard.CENTER);
         display.setDefaultBackground(false);
-        display.setShadowed(getConfig().getBoolean("nametag-shadow", true));
-        display.setSeeThrough(getConfig().getBoolean("nametag-see-through", false));
-        display.setLineWidth(400);
+        display.setShadowed(false);
+        display.setSeeThrough(false);
+        display.setLineWidth(200);
         display.setTextOpacity((byte) -1);
         display.setTransformationMatrix(new Matrix4f().scale(0.5f));
         display.setInvulnerable(true);
@@ -156,7 +156,7 @@ public final class KrystalDisplayName extends JavaPlugin implements Listener, Co
     }
 
     private Location getNametagLocation(Player player) {
-        return player.getLocation().clone().add(0.0, getConfig().getDouble("nametag-height", 2.35), 0.0);
+        return player.getLocation().clone().add(0.0, 2.32, 0.0);
     }
 
     private void removeNametag(Player player) {
