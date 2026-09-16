@@ -1,24 +1,35 @@
-# KrystalDisplayName
+# defnicks
 
-Standalone Paper plugin for Krystal SMP.
+A small Paper plugin that automatically configures **TAB** to show the nicknames set by **EssentialsX**.
+
+## What it does
+
+When TAB and Essentials are enabled, defnicks automatically runs:
+
+```text
+/tab group _DEFAULT_ customtabname %essentials_nickname%
+```
+
+That is the official TAB-supported way to put an Essentials nickname into the player's tablist name. The nickname is resolved dynamically, so changing `/nick` updates what TAB displays without modifying the TAB JAR.
 
 ## Requirements
-- Minecraft/Paper 1.21.11
-- Java 21
-- Maven 3.9+
 
-## Build
-Run `mvn clean package` from the project root. The JAR is created at `target/krystal-display-name-1.0.0.jar`.
+- Paper 1.21.x / Java 21
+- EssentialsX
+- TAB
 
-Copy the JAR into the server `plugins` folder and restart.
+## Install
 
-## Commands
-- `/nick <name>`
-- `/nick reset`
+1. Download `defnicks-1.0.0.jar` from the GitHub Actions build artifact.
+2. Put it in your server's `plugins` folder.
+3. Restart the server.
+4. Use EssentialsX `/nick <name>`.
+5. Press TAB and the Essentials nickname should be shown.
 
-## MiniMessage examples
-- `/nick Krystal`
-- `/nick <aqua>Krystal</aqua>`
-- `/nick <gradient:#00ffff:#9b5cff>Krystal</gradient>`
+You can also run `/defnicks` as an operator to re-apply the TAB setting.
 
-The plugin changes chat, TAB, the custom overhead nametag, and death messages. Nicknames are stored in the generated plugin config.yml.
+## Important
+
+TAB's documentation states that `_DEFAULT_` applies the setting to groups that do not have their own `customtabname` override. If a specific TAB group already defines `customtabname`, remove that override or set it to `%essentials_nickname%` for that group.
+
+This plugin does **not** modify TAB's JAR. That keeps the setup compatible with TAB updates.
