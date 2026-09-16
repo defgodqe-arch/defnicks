@@ -1,17 +1,19 @@
 name: defnicks
-version: 1.0.0
+version: 1.1.0
 main: com.defgodqe.defnicks.DefNicks
 api-version: '1.21'
 author: defgodqe
 website: https://github.com/defgodqe-arch/defnicks
-description: Displays EssentialsX nicknames in the TAB tablist.
+description: Essentials nickname bridge for TAB through PlaceholderAPI.
 softdepend:
   - Essentials
+  - EssentialsX
+  - PlaceholderAPI
   - TAB
 
 commands:
   defnicks:
-    description: Configure TAB to display Essentials nicknames.
+    description: Configure TAB to display Essentials nicknames through PlaceholderAPI.
     usage: /defnicks
     permission: defnicks.admin
 
