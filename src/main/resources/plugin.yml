@@ -1,0 +1,19 @@
+name: KrystalDisplayName
+version: 1.0.0
+main: com.krystal.smp.KrystalDisplayName
+api-version: '1.21'
+author: Krystal SMP
+description: Custom player display names for Krystal SMP.
+
+commands:
+  nick:
+    description: Change your Krystal SMP display name.
+    usage: /nick <name|reset>
+    aliases:
+      - nickname
+    permission: krystal.nick
+
+permissions:
+  krystal.nick:
+    description: Allows a player to change their own nickname.
+    default: true

@@ -1,0 +1,11 @@
+require-unique-names: true
+max-length: 32
+allow-colors: true
+nametag-enabled: true
+nametag-height: 2.35
+nametag-shadow: true
+nametag-see-through: false
+hide-vanilla-nametag: true
+tab-enabled: true
+chat-enabled: true
+death-messages-enabled: true
