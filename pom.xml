@@ -6,9 +6,9 @@
 
     <groupId>com.defgodqe</groupId>
     <artifactId>defnicks</artifactId>
-    <version>1.0.0</version>
+    <version>1.1.0</version>
     <name>defnicks</name>
-    <description>Automatically displays Essentials nicknames in TAB.</description>
+    <description>Essentials nickname bridge for TAB through PlaceholderAPI.</description>
 
     <properties>
         <maven.compiler.release>21</maven.compiler.release>
@@ -20,6 +20,10 @@
             <id>papermc</id>
             <url>https://repo.papermc.io/repository/maven-public/</url>
         </repository>
+        <repository>
+            <id>placeholderapi</id>
+            <url>https://repo.helpch.at/releases/</url>
+        </repository>
     </repositories>
 
     <dependencies>
@@ -29,10 +33,16 @@
             <version>1.21.11-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
+        <dependency>
+            <groupId>me.clip</groupId>
+            <artifactId>placeholderapi</artifactId>
+            <version>2.11.6</version>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 
     <build>
-        <finalName>defnicks-1.0.0</finalName>
+        <finalName>defnicks-1.1.0</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
