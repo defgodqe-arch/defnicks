@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   build:
@@ -25,7 +25,22 @@ jobs:
       - name: Build plugin
         run: mvn --batch-mode clean package
 
-      - name: Upload plugin JAR
+      - name: Publish JAR into repository
+        shell: bash
+        run: |
+          mkdir -p dist
+          cp target/defnicks-1.0.0.jar dist/defnicks-1.0.0.jar
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add dist/defnicks-1.0.0.jar
+          if git diff --cached --quiet; then
+            echo "JAR is already up to date."
+          else
+            git commit -m "Build defnicks 1.0.0 [skip ci]"
+            git push
+          fi
+
+      - name: Upload plugin JAR artifact
         uses: actions/upload-artifact@v4
         with:
           name: defnicks-1.0.0
