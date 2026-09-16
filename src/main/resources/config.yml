@@ -1,11 +1,7 @@
-require-unique-names: true
-max-length: 32
-allow-colors: true
-nametag-enabled: true
-nametag-height: 2.35
-nametag-shadow: true
-nametag-see-through: false
-hide-vanilla-nametag: true
-tab-enabled: true
-chat-enabled: true
-death-messages-enabled: true
+# defnicks 1.0.0
+# No configuration is required.
+#
+# On startup defnicks runs the official TAB command:
+# /tab group _DEFAULT_ customtabname %essentials_nickname%
+#
+# TAB then resolves the Essentials nickname dynamically for each player.
